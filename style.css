@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000000, #000000);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  max-width: 475px;
+  width: 80%;
+  padding: 10px 20px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.container.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Аватар */
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 2px solid #FFD700;
+  margin-bottom: 0.05px;
+}
+
+/* Имя */
+.username {
+  font-size: 2em;
+  font-weight: 575;
+  margin-top: 0.05px;
+  margin-bottom: 0.05px;
+}
+
+/* Подпись */
+.subtitle {
+  font-size: 0.75em;
+  font-weight: 575;
+  color: #ffffff;
+  margin-top: 0.05px;
+  margin-bottom: 22.5px;
+}
+
+/* Блок ссылок */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* Стили ссылок */
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* центрирует текст */
+  text-decoration: none;
+  color: #ffffff;
+  background: rgb(0, 0, 0);
+  border: 2px solid #FFD700;
+  padding: 12px 15px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  font-weight: 575;
+  margin-top: 0.025px;
+  margin-bottom: 22.5px;
+}
+
+/* Иконка всегда слева */
+.link .icon {
+  position: absolute;
+  border-radius: 100%;
+  left: 15px; /* фиксированное расстояние от края */
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 100%;
+}
+
+/* Эффект при наведении */
+.link:hover {
+  background: rgb(45, 45, 45);
+  transform: scale(1);
+}
+
+/* Контейнер кнопок — в ряд */
+.mini-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.025px;
+}
+
+.mini-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0, 0, 0);
+  border: 2px solid #FFD700;
+  border-radius: 100%;
+  width: 30px;   /* фиксированный размер */
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+  box-sizing: border-box; /* очень важно */
+}
+
+/* Стили иконки */
+.mini-btn .icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 100%;
+}
+
+/* Галочка позиционируем абсолютно, чтобы не влияла на размер кнопки */
+.mini-btn .checkmark {
+  position: absolute;
+  font-size: 25px;
+  color: #FFD700;
+  opacity: 0;
+  transform: scale(5);
+  transition: all 0.25s ease;
+  pointer-events: none; /* чтобы не мешала клику */
+}
+
+/* Анимация галочки */
+.mini-btn.copied .checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Ссылки выглядят как кнопки */
+.mini-btn.link-btn {
+  text-decoration: none;
+}
